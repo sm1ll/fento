@@ -1,6 +1,6 @@
-// ╔╗ ╔═╗╔╗╔╔╦╗╔═╗
-// ╠╩╗║╣ ║║║ ║ ║ ║
-// ╚═╝╚═╝╝╚╝ ╩ ╚═╝
+// ╔═╗╔═╗╔╗╔╔╦╗╔═╗
+// ╠╣ ║╣ ║║║ ║ ║ ║
+// ╚  ╚═╝╝╚╝ ╩ ╚═╝
 // ┌─┐┌─┐┌┐┌┌─┐┬┌─┐┬ ┬┬─┐┌─┐┌┬┐┬┌─┐┌┐┌
 // │  │ ││││├┤ ││ ┬│ │├┬┘├─┤ │ ││ ││││
 // └─┘└─┘┘└┘└  ┴└─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
@@ -61,7 +61,7 @@ const CONFIG = {
 			id: '2',
 			name: 'Mail',
 			icon: 'mail',
-			link: 'https://mail.protonmail.com/',
+			link: 'https://www.icloud.com/mail/',
 		},
 		{
 			id: '3',
@@ -100,7 +100,7 @@ const CONFIG = {
 			id: '2',
 			name: 'twitter',
 			icon: 'twitter',
-			link: 'https://twitter.com/',
+			link: 'https://x.com/',
 		},
 		{
 			id: '3',
