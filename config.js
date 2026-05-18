@@ -118,25 +118,25 @@ const CONFIG = {
 			link: 'https://Crunchyroll.com',
 		},
 		{
-			id: '3',
+			id: '2',
 			name: 'Notes',
 			icon: 'notepad-text',
 			link: 'https://www.icloud.com/notes/',
 		},
 		{
-			id: '2',
+			id: '3',
 			name: 'Disney+',
             icon: 'custom:assets/icons/disney.png',
 			link: 'https://www.disneyplus.com/',
 		},
 		{
-			id: '5',
+			id: '4',
 			name: 'HBO',
             icon: 'custom:assets/icons/hbo.png',
 			link: 'https://hbomax.com/',
 		},
 		{
-			id: '4',
+			id: '5',
 			name: 'Telegram',
             icon: 'custom:assets/icons/telegram.png',
 			link: 'https://web.telegram.org/k/',
@@ -148,9 +148,9 @@ const CONFIG = {
 			link: 'https://music.apple.com/',
 		},
     {
-    	id: '7',
+         	id: '7',
 			name: 'Amazon',
-      icon: 'custom:assets/icons/amazon.png',
+            icon: 'custom:assets/icons/amazon.png',
 			link: 'https://amazon.com',
 		},
 
