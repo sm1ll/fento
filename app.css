@@ -256,7 +256,9 @@ body {
   height: var(--icon);
   object-fit: contain;
 }
-
+.darktheme .custom-icon {
+  filter: invert(1);
+}
 .button__1 {
   grid-row: 1;
   grid-column: 1;
