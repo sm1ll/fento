@@ -1,249 +1,403 @@
+/* 
 // ╔═╗╔═╗╔╗╔╔╦╗╔═╗
 // ╠╣ ║╣ ║║║ ║ ║ ║
 // ╚  ╚═╝╝╚╝ ╩ ╚═╝
-// ┌─┐┌─┐┌┐┌┌─┐┬┌─┐┬ ┬┬─┐┌─┐┌┬┐┬┌─┐┌┐┌
-// │  │ ││││├┤ ││ ┬│ │├┬┘├─┤ │ ││ ││││
-// └─┘└─┘┘└┘└  ┴└─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
+*/
 
-const CONFIG = {
-	// ┌┐ ┌─┐┌─┐┬┌─┐┌─┐
-	// ├┴┐├─┤└─┐││  └─┐
-	// └─┘┴ ┴└─┘┴└─┘└─┘
+/* V A R I A B L E S */
 
-	// General
-	name: 'Smill',
-	imageBackground: false,
-	openInNewTab: true,
-	twelveHourFormat: true,
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
-	// Greetings
-	greetingMorning: 'Good morning!',
-	greetingAfternoon: 'Good afternoon,',
-	greetingEvening: 'Good evening,',
-	greetingNight: 'Go to Sleep!',
+:root {
+  /* Font Size */
+  --fg-primary: 5rem;
+  --fg-secondary: 1.3rem;
+  --fg-date: 3rem;
+  --fg-list: 1rem;
+  --icon: 1.8rem;
 
-	// Layout
-	bentoLayout: 'buttons', // 'bento', 'lists', 'buttons'
+  /* Fonts Color */
+  --fg: #3a3a3a;
+  --sfg: #494949;
 
-	// Weather
-	weatherKey: '9113a84ae0deb23def7710e61ad2467c', // Write here your API Key
-	weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
-	weatherUnit: 'C', // 'F', 'C'
-	language: 'en', // More languages in https://openweathermap.org/current#multi
+  /* Light Colors */
+  --accent: #57a0d9;
+  --background: #f5f5f5;
+  --cards: #e4e6e6;
 
-	trackLocation: false, // If false or an error occurs, the app will use the lat/lon below
-	defaultLatitude: '18.492939',
-	defaultLongitude: '-69.799074',
+  /* Image background */
+  --imgbg: url(assets/background.jpg);
+  --imgcol: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.7)
+  );
+}
 
-	// Autochange
-	autoChangeTheme: true,
+.darktheme {
+  --accent: #57a0d9;
+  --background: #19171a;
+  --cards: #201e21;
 
-	// Autochange by OS
-	changeThemeByOS: true,
+  --fg: #d8dee9;
+  --sfg: #2c292e;
 
-	// Autochange by hour options (24hrs format, string must be in: hh:mm)
-	changeThemeByHour: false,
-	hourDarkThemeActive: '18:30',
-	hourDarkThemeInactive: '07:00',
+  --imgcol: linear-gradient(
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.85)
+  );
+}
 
-	// ┌┐ ┬ ┬┌┬┐┌┬┐┌─┐┌┐┌┌─┐
-	// ├┴┐│ │ │  │ │ ││││└─┐
-	// └─┘└─┘ ┴  ┴ └─┘┘└┘└─┘
+/* S T Y L E S */
 
-	firstButtonsContainer: [
-		{
-			id: '1',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
-		},
-		{
-			id: '2',
-			name: 'Mail',
-			icon: 'mail',
-			link: 'https://www.icloud.com/mail/',
-		},
-		{
-			id: '3',
-			name: 'Reddit',
-			icon: 'bot',
-			link: 'https://reddit.com',
-		},
-		{
-			id: '4',
-			name: 'X',
-            icon: 'custom:assets/icons/x.png',
-			link: 'https://x.com',
-		},
-		{
-			id: '5',
-			name: 'Youtube',
-			icon: 'square-play',
-			link: 'https://youtube.com',
-		},
-		{
-			id: '6',
-			name: 'ChatGPT',
-            icon: 'custom:assets/icons/gpt.png',
-			link: 'https://chatgpt.com/',
-		},
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  transition: 0.2s ease-in-out;
+}
 
-		{
-			id: '7',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
-		},
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
 
-		{
-			id: '8',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
-		},
+body {
+  width: 100vw;
+  min-height: 100vh;
 
-				{
-			id: '9',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
-		},
-	],
+  background-color: var(--background);
 
-			id: '10',
-			name: 'Crunchyroll',
-            icon: 'custom:assets/icons/crunchyroll.png',
-			link: 'https://Crunchyroll.com',
-		},
-		{
-			id: '11',
-			name: 'Notes',
-			icon: 'notepad-text',
-			link: 'https://www.icloud.com/notes/',
-		},
-		{
-			id: '12',
-			name: 'Disney+',
-            icon: 'custom:assets/icons/disney.png',
-			link: 'https://www.disneyplus.com/',
-		},
-		{
-			id: '13',
-			name: 'HBO',
-            icon: 'custom:assets/icons/hbo.png',
-			link: 'https://hbomax.com/',
-		},
-		{
-			id: '14',
-			name: 'Telegram',
-            icon: 'custom:assets/icons/telegram.png',
-			link: 'https://web.telegram.org/k/',
-		},
-		{
-			id: '15',
-			name: 'Music',
-			icon: 'music',
-			link: 'https://music.apple.com/',
-		},
-	],
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	// ┬  ┬┌─┐┌┬┐┌─┐
-	// │  │└─┐ │ └─┐
-	// ┴─┘┴└─┘ ┴ └─┘
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
-	// First Links Container
-	firstlistsContainer: [
-		{
-			icon: 'music',
-			id: '1',
-			links: [
-				{
-					name: 'Inspirational',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-				},
-				{
-					name: 'Classic',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-				},
-				{
-					name: 'Oldies',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-				},
-				{
-					name: 'Rock',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-				},
-			],
-		},
-		{
-			icon: 'coffee',
-			id: '2',
-			links: [
-				{
-					name: 'Linkedin',
-					link: 'https://www.linkedin.com',
-				},
-				{
-					name: 'Dribbble',
-					link: 'https://www.dribbble.com',
-				},
-				{
-					name: 'Trello',
-					link: 'https://www.trello.com',
-				},
-				{
-					name: 'Slack',
-					link: 'https://www.slack.com',
-				},
-			],
-		},
-	],
+.notransition {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
 
-	// Second Links Container
-	secondListsContainer: [
-		{
-			icon: 'binary',
-			id: '1',
-			links: [
-				{
-					name: 'Spotify',
-					link: 'https://www.spotify.com',
-				},
-				{
-					name: 'Reddit',
-					link: 'https://www.reddit.com',
-				},
-				{
-					name: 'Hashnode',
-					link: 'https://www.hashnode.com',
-				},
-				{
-					name: 'Pocket',
-					link: 'https://www.pocket.com',
-				},
-			],
-		},
-		{
-			icon: 'github',
-			id: '2',
-			links: [
-				{
-					name: 'Front',
-					link: 'https://www.reddit.com/r/Frontend/',
-				},
-				{
-					name: 'Rust',
-					link: 'https://www.reddit.com/r/rust/',
-				},
-				{
-					name: 'Go',
-					link: 'https://www.reddit.com/r/golang/',
-				},
-				{
-					name: 'Repos',
-					link: 'https://github.com/migueravila',
-				},
-			],
-		},
-	],
-};
+.withImageBackground {
+  background-image: var(--imgcol), var(--imgbg);
+  background-size: cover;
+  background-position: center;
+}
+
+#themeButton {
+  position: absolute;
+  margin: 2em 2em 0 0;
+  right: 0;
+  top: 0;
+  color: var(--fg);
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#themeIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.container {
+  width: min(1400px, 95vw);
+  min-height: min(900px, 95vh);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  grid-gap: 30px;
+
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--cards);
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.35);
+}
+
+.timeBlock {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weatherBlock {
+  grid-column: 3 / span 2;
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hour,
+#separator,
+#minutes {
+  font-size: var(--fg-primary);
+  font-weight: bolder;
+  color: var(--fg);
+}
+
+#month,
+#day {
+  font-size: var(--fg-date);
+  font-weight: bold;
+  color: var(--fg);
+}
+
+#day {
+  margin-left: 1.5rem;
+}
+
+#greetings {
+  font-size: var(--fg-secondary);
+  color: var(--fg);
+  margin-top: 1rem;
+}
+
+.weatherIcon img {
+  width: 70px;
+  height: 70px;
+}
+
+.weatherValue p {
+  font-size: var(--fg-secondary);
+  font-weight: bolder;
+  margin-left: 15px;
+  color: var(--fg);
+}
+
+.weatherDescription p {
+  font-size: var(--fg-secondary);
+  margin-left: 15px;
+  color: var(--fg);
+}
+
+.reduceGap {
+  grid-gap: 2rem !important;
+}
+
+.removeGap {
+  grid-gap: 0 !important;
+}
+
+.linksBlock {
+  grid-row: 2;
+  grid-column: 1 / span 4;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-gap: 1.5rem;
+}
+
+.linksBlockLeft {
+  grid-column: 1 / span 2;
+}
+
+.linksBlockRight {
+  grid-column: 3 / span 2;
+}
+
+/* BUTTONS */
+
+.buttonsContainer {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+
+  grid-auto-rows: 140px;
+
+  gap: 30px;
+  padding: 20px;
+
+  justify-content: center;
+  align-content: start;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.buttonIcon {
+  width: var(--icon);
+  height: var(--icon);
+  color: var(--fg);
+}
+
+.custom-icon {
+  width: var(--icon);
+  height: var(--icon);
+  object-fit: contain;
+}
+
+.darktheme .custom-icon {
+  filter: invert(1);
+}
+
+.button:hover {
+  background-color: var(--accent);
+}
+
+.button:hover svg {
+  stroke: var(--sfg);
+}
+
+/* LISTS */
+
+.listsContainer {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  grid-gap: 3rem;
+
+  padding: 0.4rem;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.list__1 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.list__2 {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.listIcon {
+  margin-bottom: 2vh;
+  color: var(--fg);
+
+  width: var(--icon);
+  height: var(--icon);
+}
+
+.listItem {
+  text-decoration: none;
+  font-size: var(--fg-list);
+  color: var(--fg);
+
+  margin-top: 1vh;
+
+  padding: 8px 12px;
+
+  border-radius: 5px;
+
+  font-weight: bold;
+  text-align: center;
+
+  width: 80%;
+}
+
+.listItem:hover {
+  background-color: var(--accent);
+  color: var(--sfg);
+}
+
+/* M E D I A - Q U E R I E S */
+
+@media only screen and (max-width: 68.75em) {
+  .container {
+    grid-gap: 20px;
+    padding: 20px;
+  }
+
+  .timeBlock {
+    grid-column: 1 / span 4;
+  }
+
+  .weatherBlock {
+    display: none;
+  }
+
+  .linksBlockRight {
+    display: none;
+  }
+
+  .linksBlockLeft {
+    grid-column: 1 / span 4;
+  }
+
+  .buttonsContainer {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+  }
+
+  .button {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .buttonsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  #hour,
+  #separator,
+  #minutes {
+    font-size: 3.5rem;
+  }
+
+  #month,
+  #day {
+    font-size: 2rem;
+  }
+}
