@@ -119,21 +119,21 @@ const CONFIG = {
 		},
 		{
 			id: '2',
-			name: 'Notes',
-			icon: 'notepad-text',
-			link: 'https://www.icloud.com/notes/',
-		},
-		{
-			id: '3',
 			name: 'Disney+',
             icon: 'custom:assets/icons/disney.png',
 			link: 'https://www.disneyplus.com/',
 		},
 		{
-			id: '4',
+			id: '3',
 			name: 'HBO',
             icon: 'custom:assets/icons/hbo.png',
 			link: 'https://hbomax.com/',
+		},
+		{
+			id: '4',
+			name: 'Notes',
+			icon: 'notepad-text',
+			link: 'https://www.icloud.com/notes/',
 		},
 		{
 			id: '5',
@@ -147,7 +147,7 @@ const CONFIG = {
 			icon: 'music',
 			link: 'https://music.apple.com/',
 		},
-    {
+        {
          	id: '7',
 			name: 'Amazon',
             icon: 'custom:assets/icons/amazon.png',
