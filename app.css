@@ -1,7 +1,7 @@
 /* 
-// ╔═╗╔═╗╔╗╔╔╦╗╔═╗
-// ╠╣ ║╣ ║║║ ║ ║ ║
-// ╚  ╚═╝╝╚╝ ╩ ╚═╝
+// ╔╗ ╔═╗╔╗╔╔╦╗╔═╗
+// ╠╩╗║╣ ║║║ ║ ║ ║
+// ╚═╝╚═╝╝╚╝ ╩ ╚═╝ 
 */
 
 /* V A R I A B L E S */
@@ -9,23 +9,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 :root {
-  /* Font Size */
   --fg-primary: 5rem;
   --fg-secondary: 1.3rem;
   --fg-date: 3rem;
   --fg-list: 1rem;
   --icon: 1.8rem;
 
-  /* Fonts Color */
   --fg: #3a3a3a;
   --sfg: #494949;
 
-  /* Light Colors */
   --accent: #57a0d9;
   --background: #f5f5f5;
   --cards: #e4e6e6;
 
-  /* Image background */
   --imgbg: url(assets/background.jpg);
   --imgcol: linear-gradient(
     rgba(255, 255, 255, 0.7),
@@ -77,9 +73,6 @@ body {
 }
 
 .notransition {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -112,8 +105,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto;
-  grid-gap: 30px;
 
+  gap: 30px;
   padding: 20px;
 }
 
@@ -128,6 +121,8 @@ body {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.35);
 }
 
+/* TIME */
+
 .timeBlock {
   grid-row: 1;
   grid-column: 1 / span 2;
@@ -137,6 +132,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* WEATHER */
 
 .weatherBlock {
   grid-column: 3 / span 2;
@@ -148,17 +145,13 @@ body {
   justify-content: center;
 }
 
+/* DATE */
+
 .date {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 30px;
-}
-
-.weather {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .clock {
@@ -192,6 +185,14 @@ body {
   margin-top: 1rem;
 }
 
+/* WEATHER */
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .weatherIcon img {
   width: 70px;
   height: 70px;
@@ -210,13 +211,17 @@ body {
   color: var(--fg);
 }
 
+/* HELPERS */
+
 .reduceGap {
-  grid-gap: 2rem !important;
+  gap: 2rem !important;
 }
 
 .removeGap {
-  grid-gap: 0 !important;
+  gap: 0 !important;
 }
+
+/* LINKS BLOCK */
 
 .linksBlock {
   grid-row: 2;
@@ -225,22 +230,30 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  grid-gap: 1.5rem;
+  gap: 1.5rem;
+
+  align-items: start;
 }
 
 .linksBlockLeft {
   grid-column: 1 / span 2;
+
+  height: fit-content;
+  min-height: 100%;
 }
 
 .linksBlockRight {
   grid-column: 3 / span 2;
+
+  height: fit-content;
+  min-height: 100%;
 }
 
 /* BUTTONS */
 
 .buttonsContainer {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 
   display: grid;
 
@@ -299,7 +312,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
 
-  grid-gap: 3rem;
+  gap: 3rem;
 
   padding: 0.4rem;
 }
@@ -351,11 +364,11 @@ body {
   color: var(--sfg);
 }
 
-/* M E D I A - Q U E R I E S */
+/* MEDIA QUERIES */
 
 @media only screen and (max-width: 68.75em) {
   .container {
-    grid-gap: 20px;
+    gap: 20px;
     padding: 20px;
   }
 
