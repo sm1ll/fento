@@ -116,9 +116,9 @@ const CONFIG = {
 		},
 		{
 			id: '4',
-			name: 'Hashnode',
-			icon: 'pen-tool',
-			link: 'https://hashnode.com/',
+			name: 'Telegram',
+            icon: 'custom:assets/icons/telegram.png',
+			link: 'https://web.telegram.org/k/',
 		},
 		{
 			id: '6',
