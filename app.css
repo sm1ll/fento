@@ -1,7 +1,7 @@
 /* 
-// ╔╗ ╔═╗╔╗╔╔╦╗╔═╗
-// ╠╩╗║╣ ║║║ ║ ║ ║
-// ╚═╝╚═╝╝╚╝ ╩ ╚═╝ 
+// ╔═╗╔═╗╔╗╔╔╦╗╔═╗
+// ╠╣ ║╣ ║║║ ║ ║ ║
+// ╚  ╚═╝╝╚╝ ╩ ╚═╝
 */
 
 /* V A R I A B L E S */
@@ -59,16 +59,21 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+
   background-color: var(--background);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .notransition {
@@ -102,11 +107,13 @@ body {
 
 .container {
   width: min(1400px, 95vw);
-  height: min(900px, 95vh);
+  min-height: min(900px, 95vh);
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto auto;
   grid-gap: 30px;
+
   padding: 20px;
 }
 
@@ -122,8 +129,9 @@ body {
 }
 
 .timeBlock {
-  grid-row: 1 / span 2;
+  grid-row: 1;
   grid-column: 1 / span 2;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,7 +140,8 @@ body {
 
 .weatherBlock {
   grid-column: 3 / span 2;
-  grid-row: 1 / span 2;
+  grid-row: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -210,21 +219,20 @@ body {
 }
 
 .linksBlock {
-  grid-row: 3 / span 2;
+  grid-row: 2;
   grid-column: 1 / span 4;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+
   grid-gap: 1.5rem;
 }
 
 .linksBlockLeft {
-  grid-row: 1 / span 2;
   grid-column: 1 / span 2;
 }
 
 .linksBlockRight {
-  grid-row: 1 / span 2;
   grid-column: 3 / span 2;
 }
 
@@ -233,6 +241,7 @@ body {
 .buttonsContainer {
   width: 100%;
   height: 100%;
+
   display: grid;
 
   grid-template-columns: repeat(3, minmax(160px, 1fr));
@@ -250,6 +259,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   height: 100%;
 }
@@ -283,10 +293,14 @@ body {
 .listsContainer {
   width: 100%;
   height: 100%;
+
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
+
   grid-gap: 3rem;
+
   padding: 0.4rem;
 }
 
@@ -310,6 +324,7 @@ body {
 .listIcon {
   margin-bottom: 2vh;
   color: var(--fg);
+
   width: var(--icon);
   height: var(--icon);
 }
@@ -318,11 +333,16 @@ body {
   text-decoration: none;
   font-size: var(--fg-list);
   color: var(--fg);
+
   margin-top: 1vh;
+
   padding: 8px 12px;
+
   border-radius: 5px;
+
   font-weight: bold;
   text-align: center;
+
   width: 80%;
 }
 
@@ -340,7 +360,6 @@ body {
   }
 
   .timeBlock {
-    grid-row: 1 / span 2;
     grid-column: 1 / span 4;
   }
 
@@ -363,5 +382,22 @@ body {
   .button {
     padding-left: 40px;
     padding-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .buttonsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  #hour,
+  #separator,
+  #minutes {
+    font-size: 3.5rem;
+  }
+
+  #month,
+  #day {
+    font-size: 2rem;
   }
 }
