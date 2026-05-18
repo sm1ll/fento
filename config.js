@@ -54,7 +54,7 @@ const CONFIG = {
 		{
 			id: '1',
 			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon2.png',
+            icon: 'custom:assets/icons/amazon.png',
 			link: 'https://amazon.com',
 		},
 		{
