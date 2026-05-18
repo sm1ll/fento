@@ -3,6 +3,15 @@
 // └─┘└─┘ ┴  ┴ └─┘┘└┘└─┘
 // Function to print Button Cards.
 
+const renderIcon = (button) => {
+	return button.icon.startsWith('custom:')
+		? `<img class="custom-icon" src="${button.icon.replace(
+				'custom:',
+				''
+		  )}" />`
+		: `<i class="buttonIcon" icon-name="${button.icon}"></i>`;
+};
+
 const generateFirstButtonsContainer = () => {
 	for (const button of CONFIG.firstButtonsContainer) {
 		let item = `
@@ -11,7 +20,7 @@ const generateFirstButtonsContainer = () => {
           target="${CONFIG.openInNewTab ? '_blank' : ''}"
           class="card button button__${button.id}"
         >
-          <i class="buttonIcon" icon-name="${button.icon}"></i>
+          ${renderIcon(button)}
         </a>
     `;
 
@@ -29,7 +38,7 @@ const generateSecondButtonsContainer = () => {
           target="${CONFIG.openInNewTab ? '_blank' : ''}"
           class="card button button__${button.id}"
         >
-          <i class="buttonIcon" icon-name="${button.icon}"></i>
+          ${renderIcon(button)}
         </a>
     `;
 
