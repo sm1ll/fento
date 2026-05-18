@@ -123,7 +123,7 @@ const CONFIG = {
 		{
 			id: '6',
 			name: 'Music',
-            icon: 'custom:assets/icons/amusic.png',
+			icon: 'notepad-text',
 			link: 'https://music.apple.com/',
 		},
 	],
