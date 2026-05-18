@@ -122,9 +122,9 @@ const CONFIG = {
 		},
 		{
 			id: '6',
-			name: 'Figma',
-			icon: 'figma',
-			link: 'https://figma.com/',
+			name: 'Music',
+            icon: 'custom:assets/icons/amusic.png',
+			link: 'https://music.apple.com/',
 		},
 	],
 
