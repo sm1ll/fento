@@ -6,48 +6,45 @@
 
 /* V A R I A B L E S */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap'); /* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 :root {
   /* Font Size */
-  --fg-primary: 12vh; /* Time and Greetings */
-  --fg-secondary: 3vh; /* Greetings and Weather widger */
-  --fg-date: 8vh; /* Date */
-  --fg-list: 2vh; /* Links List */
-  --icon: 3vh; /* Icon Size */
+  --fg-primary: 5rem;
+  --fg-secondary: 1.3rem;
+  --fg-date: 3rem;
+  --fg-list: 1rem;
+  --icon: 1.8rem;
 
   /* Fonts Color */
-  --fg: #3a3a3a; /* Foreground color */
-  --sfg: #494949; /* Sceondary Foreground color */
+  --fg: #3a3a3a;
+  --sfg: #494949;
 
-  /* Light Colors  */
-  --accent: #57a0d9; /* Hover color */
-  --background: #f5f5f5; /* Background color */
-  --cards: #e4e6e6; /* Cards color */
+  /* Light Colors */
+  --accent: #57a0d9;
+  --background: #f5f5f5;
+  --cards: #e4e6e6;
 
-  /* Image background  */
-  --imgbg: url(assets/background.jpg); /* Image URL */
+  /* Image background */
+  --imgbg: url(assets/background.jpg);
   --imgcol: linear-gradient(
     rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0.7)
-  ); /* Filter color */
+  );
 }
 
 .darktheme {
-  /* Dark Colors  */
-  --accent: #57a0d9; /* Hover color */
-  --background: #19171a; /* Background color */
-  --cards: #201e21; /* Cards color */
+  --accent: #57a0d9;
+  --background: #19171a;
+  --cards: #201e21;
 
-  /* Fonts Color */
-  --fg: #d8dee9; /* Foreground color */
-  --sfg: #2c292e; /* Secondary Foreground color */
+  --fg: #d8dee9;
+  --sfg: #2c292e;
 
-  /* Image background  */
   --imgcol: linear-gradient(
     rgba(0, 0, 0, 0.85),
     rgba(0, 0, 0, 0.85)
-  ); /* Filter color */
+  );
 }
 
 /* S T Y L E S */
@@ -60,6 +57,10 @@
   transition: 0.2s ease-in-out;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -67,6 +68,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .notransition {
@@ -79,6 +81,7 @@ body {
 .withImageBackground {
   background-image: var(--imgcol), var(--imgbg);
   background-size: cover;
+  background-position: center;
 }
 
 #themeButton {
@@ -89,7 +92,7 @@ body {
   color: var(--fg);
   border: none;
   cursor: pointer;
-  background-color: #00000000;
+  background-color: transparent;
 }
 
 #themeIcon {
@@ -98,8 +101,8 @@ body {
 }
 
 .container {
-  width: 145vh;
-  height: 85vh;
+  width: min(1400px, 95vw);
+  height: min(900px, 95vh);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -110,7 +113,7 @@ body {
 .card {
   background-color: var(--cards);
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .card:hover {
@@ -177,6 +180,7 @@ body {
 #greetings {
   font-size: var(--fg-secondary);
   color: var(--fg);
+  margin-top: 1rem;
 }
 
 .weatherIcon img {
@@ -247,33 +251,46 @@ body {
   color: var(--fg);
 }
 
+.custom-icon {
+  width: var(--icon);
+  height: var(--icon);
+  object-fit: contain;
+}
+
 .button__1 {
   grid-row: 1;
   grid-column: 1;
 }
+
 .button__2 {
   grid-row: 1;
   grid-column: 2;
 }
+
 .button__3 {
   grid-row: 2;
   grid-column: 1;
 }
+
 .button__4 {
   grid-row: 2;
   grid-column: 2;
 }
+
 .button__5 {
   grid-row: 1;
   grid-column: 3;
 }
+
 .button__6 {
   grid-row: 2;
   grid-column: 3;
 }
+
 .button:hover {
   background-color: var(--accent);
 }
+
 .button:hover svg {
   stroke: var(--sfg);
 }
@@ -299,17 +316,19 @@ body {
   grid-column: 1;
   grid-row: 1 / span 2;
 }
+
 .list__2 {
   grid-column: 2;
   grid-row: 1 / span 2;
 }
+
 .listIcon {
-  /* margin-top: 3vh; */
   margin-bottom: 2vh;
   color: var(--fg);
   width: var(--icon);
   height: var(--icon);
 }
+
 .listItem {
   text-decoration: none;
   font-size: var(--fg-list);
@@ -321,28 +340,18 @@ body {
   text-align: center;
   width: 80%;
 }
+
 .listItem:hover {
   background-color: var(--accent);
   color: var(--sfg);
 }
 
---------------------------------------------------
-
-
-.custom-icon {
-  width: var(--icon);
-  height: var(--icon);
-  object-fit: contain;
-}
-
-
----------------------------------------------------
 /* M E D I A - Q U E R I E S */
 
 @media only screen and (max-width: 68.75em) {
   .container {
     grid-gap: 20px;
-    padding: 40px;
+    padding: 20px;
   }
 
   .timeBlock {
@@ -354,10 +363,6 @@ body {
     display: none;
   }
 
-  #greetings {
-    font-size: var(--fg-secondary);
-  }
-
   .linksBlockRight {
     display: none;
   }
@@ -367,8 +372,7 @@ body {
   }
 
   .button {
-    grid-gap: 3vw;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
