@@ -110,39 +110,37 @@ const CONFIG = {
 		},
 	],
 
-	secondButtonsContainer: [
-		{
-			id: '1',
+			id: '10',
 			name: 'Crunchyroll',
             icon: 'custom:assets/icons/crunchyroll.png',
 			link: 'https://Crunchyroll.com',
 		},
 		{
-			id: '3',
+			id: '11',
 			name: 'Notes',
 			icon: 'notepad-text',
 			link: 'https://www.icloud.com/notes/',
 		},
 		{
-			id: '2',
+			id: '12',
 			name: 'Disney+',
             icon: 'custom:assets/icons/disney.png',
 			link: 'https://www.disneyplus.com/',
 		},
 		{
-			id: '5',
+			id: '13',
 			name: 'HBO',
             icon: 'custom:assets/icons/hbo.png',
 			link: 'https://hbomax.com/',
 		},
 		{
-			id: '4',
+			id: '14',
 			name: 'Telegram',
             icon: 'custom:assets/icons/telegram.png',
 			link: 'https://web.telegram.org/k/',
 		},
 		{
-			id: '6',
+			id: '15',
 			name: 'Music',
 			icon: 'music',
 			link: 'https://music.apple.com/',
