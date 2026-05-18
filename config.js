@@ -87,6 +87,27 @@ const CONFIG = {
             icon: 'custom:assets/icons/gpt.png',
 			link: 'https://chatgpt.com/',
 		},
+
+		{
+			id: '7',
+			name: 'Amazon',
+            icon: 'custom:assets/icons/amazon.png',
+			link: 'https://amazon.com',
+		},
+
+		{
+			id: '8',
+			name: 'Amazon',
+            icon: 'custom:assets/icons/amazon.png',
+			link: 'https://amazon.com',
+		},
+
+				{
+			id: '9',
+			name: 'Amazon',
+            icon: 'custom:assets/icons/amazon.png',
+			link: 'https://amazon.com',
+		},
 	],
 
 	secondButtonsContainer: [
