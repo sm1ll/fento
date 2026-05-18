@@ -92,9 +92,9 @@ const CONFIG = {
 	secondButtonsContainer: [
 		{
 			id: '1',
-			name: 'Music',
-			icon: 'headphones',
-			link: 'https://open.spotify.com',
+			name: 'Crunchyroll',
+            icon: 'custom:assets/icons/Crunchyroll.png',
+			link: 'https://Crunchyroll.com',
 		},
 		{
 			id: '2',
@@ -104,15 +104,15 @@ const CONFIG = {
 		},
 		{
 			id: '3',
-			name: 'bot',
-			icon: 'bot',
-			link: 'https://discord.com/app',
+			name: 'Disney+',
+            icon: 'custom:assets/icons/disney.png',
+			link: 'https://www.disneyplus.com/',
 		},
 		{
 			id: '4',
-			name: 'Amazon',
-			icon: 'shopping-bag',
-			link: 'https://amazon.com/',
+			name: 'HBO',
+            icon: 'custom:assets/icons/hbo.png',
+			link: 'https://hbomax.com/',
 		},
 		{
 			id: '5',
