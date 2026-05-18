@@ -83,9 +83,9 @@ const CONFIG = {
 		},
 		{
 			id: '6',
-			name: 'Odysee',
-			icon: 'youtube',
-			link: 'https://odysee.com/',
+			name: 'ChatGPT',
+            icon: 'custom:assets/icons/gpt.png',
+			link: 'https://chatgpt.com/',
 		},
 	],
 
