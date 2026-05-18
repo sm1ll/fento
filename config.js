@@ -98,9 +98,9 @@ const CONFIG = {
 		},
 		{
 			id: '3',
-			name: 'twitter',
-			icon: 'twitter',
-			link: 'https://x.com/',
+			name: 'Notes',
+			icon: 'notepad-text',
+			link: 'https://www.icloud.com/notes/',
 		},
 		{
 			id: '2',
