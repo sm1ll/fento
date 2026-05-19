@@ -97,9 +97,9 @@ const CONFIG = {
 
 		{
 			id: '8',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
+			name: 'Deku',
+            icon: 'custom:assets/icons/deku.png',
+			link: 'https://www.dekudeals.com/',
 		},
 
 				{
