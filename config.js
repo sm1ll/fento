@@ -104,9 +104,9 @@ const CONFIG = {
 
 				{
 			id: '9',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
+			name: 'twitch',
+            icon: 'custom:assets/icons/twitch.png',
+			link: 'https://twitch.tv',
 		},
 	],
 
@@ -163,9 +163,9 @@ const CONFIG = {
 
 				{
 			id: '9',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
+			name: 'BMcargo',
+            icon: 'earth',
+			link: 'https://bmcargo-online.iplus.com.do/lg-es/ut/Login.aspx',
 		},
 	],
 
