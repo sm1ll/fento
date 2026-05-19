@@ -90,9 +90,9 @@ const CONFIG = {
 
 		{
 			id: '7',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
+			name: 'github',
+            icon: 'custom:assets/icons/github.png',
+			link: 'https://github.com/sm1ll',
 		},
 
 		{
