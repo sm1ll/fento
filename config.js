@@ -149,9 +149,9 @@ const CONFIG = {
 		},
         {
          	id: '7',
-			name: 'Amazon',
-            icon: 'custom:assets/icons/amazon.png',
-			link: 'https://amazon.com',
+			name: 'Whatasapp',
+            icon: 'custom:assets/icons/ws.png',
+			link: 'https://web.whatsapp.com/',
 		},
 
 		{
