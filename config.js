@@ -143,9 +143,9 @@ const CONFIG = {
 		},
 		{
 			id: '6',
-			name: 'Music',
-			icon: 'music',
-			link: 'https://music.apple.com/',
+			name: 'Claude',
+			icon: 'custom:assets/icons/claude.png',
+			link: 'https://claude.ai',
 		},
         {
          	id: '7',
