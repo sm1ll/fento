@@ -119,9 +119,9 @@ const CONFIG = {
 		},
 		{
 			id: '2',
-			name: 'Disney+',
-            icon: 'custom:assets/icons/disney.png',
-			link: 'https://www.disneyplus.com/',
+			name: 'lolesports',
+            icon: 'custom:assets/icons/ligolegen.png',
+			link: 'https://www.lolesports.com/',
 		},
 		{
 			id: '3',
@@ -263,7 +263,7 @@ const CONFIG = {
 				},
 				{
 					name: 'Repos',
-					link: 'https://github.com/migueravila',
+					link: 'https://github.com/sm1ll',
 				},
 			],
 		},
